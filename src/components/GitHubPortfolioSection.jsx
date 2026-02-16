@@ -39,12 +39,12 @@ const projectCards = [
     image: bloodImage,
     href: 'https://blood-donation-d97751.netlify.app/home#',
     alt: 'Blood donation project preview',
-    slot: 'bottom'
+    slot: 'left-bottom'
   }
 ];
 
 const floatingPills = ['HTML', 'CSS', 'JAVASCRIPT', 'REACT', 'VITE'];
-const netlifyProjectsUrl = 'https://app.netlify.com/teams/bassem123450/projects';
+const netlifyProjectsUrl = 'https://app.netlify.com/teams/bassem_ahmed/projects';
 
 export default function GitHubPortfolioSection() {
   return (

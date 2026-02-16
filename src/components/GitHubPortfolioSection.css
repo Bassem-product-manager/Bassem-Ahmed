@@ -161,7 +161,7 @@
 
 .github-portfolio-stack {
   position: relative;
-  height: clamp(430px, 50vw, 590px);
+  height: clamp(430px, 52vw, 610px);
   margin-top: clamp(1.8rem, 4vw, 2.6rem);
   perspective: 1200px;
 }
@@ -207,31 +207,31 @@
 
 .github-portfolio-card--center {
   --x: 0px;
-  --y: 28px;
+  --y: 24px;
   --r: 0deg;
   z-index: 14;
   width: clamp(198px, 24vw, 286px);
 }
 
 .github-portfolio-card--left-top {
-  --x: -242px;
-  --y: -48px;
-  --r: -16deg;
+  --x: -226px;
+  --y: -58px;
+  --r: -14deg;
   z-index: 12;
 }
 
 .github-portfolio-card--right-top {
-  --x: 242px;
-  --y: -48px;
-  --r: 16deg;
+  --x: 226px;
+  --y: -58px;
+  --r: 14deg;
   z-index: 12;
 }
 
-.github-portfolio-card--bottom {
-  --x: 0px;
-  --y: 126px;
-  --r: 0deg;
-  z-index: 11;
+.github-portfolio-card--left-bottom {
+  --x: -196px;
+  --y: 84px;
+  --r: -8deg;
+  z-index: 13;
 }
 
 .github-portfolio-card__tag {
@@ -287,7 +287,7 @@
   display: block;
   position: absolute;
   left: 50%;
-  bottom: -10%;
+  bottom: -18%;
   width: clamp(310px, 64vw, 680px);
   transform: translateX(-50%);
   text-decoration: none;
@@ -445,23 +445,23 @@
 
 @media (max-width: 1100px) {
   .github-portfolio-card--left-top {
-    --x: -188px;
-    --y: -32px;
+    --x: -176px;
+    --y: -40px;
   }
 
   .github-portfolio-card--right-top {
-    --x: 188px;
-    --y: -32px;
+    --x: 176px;
+    --y: -40px;
   }
 
-  .github-portfolio-card--bottom {
-    --x: 0px;
-    --y: 108px;
+  .github-portfolio-card--left-bottom {
+    --x: -144px;
+    --y: 92px;
   }
 
   .github-portfolio-folder {
     width: clamp(310px, 70vw, 640px);
-    bottom: -9%;
+    bottom: -16%;
   }
 }
 

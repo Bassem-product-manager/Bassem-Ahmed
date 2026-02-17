@@ -397,6 +397,8 @@
     order: 1;
     max-width: 100%;
     text-align: center;
+    display: grid;
+    justify-items: center;
   }
 
   .hero-kicker {
@@ -406,17 +408,17 @@
 
   .hero-copy h1 {
     margin: 0.56rem auto 0.68rem;
-    font-size: clamp(1.42rem, 5.8vw, 2.02rem);
-    line-height: 1.22;
+    font-size: clamp(1.5rem, 6.1vw, 2.06rem);
+    line-height: 1.19;
     font-weight: 500;
-    max-width: 13.5ch;
+    max-width: 16.8ch;
     letter-spacing: -0.008em;
   }
 
   .hero-subtitle {
-    max-width: 30ch;
-    font-size: clamp(0.86rem, 3.5vw, 0.96rem);
-    line-height: 1.48;
+    max-width: 32ch;
+    font-size: clamp(0.88rem, 3.5vw, 0.98rem);
+    line-height: 1.52;
   }
 
   .hero-copy h1,
@@ -485,13 +487,15 @@
 
 @media (max-width: 480px) {
   .hero-copy h1 {
-    font-size: clamp(1.32rem, 8vw, 1.84rem);
-    max-width: 12.5ch;
+    font-size: clamp(1.4rem, 7.2vw, 1.9rem);
+    max-width: 17.5ch;
+    line-height: 1.2;
   }
 
   .hero-subtitle {
-    max-width: 28ch;
-    font-size: 0.84rem;
+    max-width: 31ch;
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
 
   .hero-actions {

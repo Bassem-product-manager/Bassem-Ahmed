@@ -487,11 +487,28 @@
   }
 
   .timeline-header {
-    text-align: left;
+    text-align: center;
+  }
+
+  .timeline-kicker {
+    justify-content: center;
+  }
+
+  .timeline-company-title {
+    text-align: center;
+  }
+
+  .timeline-company-marquee {
+    margin-inline: auto;
   }
 
   .timeline-header h2 {
     font-size: clamp(1.8rem, 11vw, 2.8rem);
+  }
+
+  .timeline-subtitle {
+    margin-inline: auto;
+    max-width: 34ch;
   }
 
   .timeline-road-vehicle {

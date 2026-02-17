@@ -189,14 +189,15 @@
 
 .connect-actions {
   margin-top: 0.96rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
   gap: 0.72rem;
 }
 
 .connect-send {
   min-width: 132px;
+  width: min(280px, 100%);
   border: 1px solid rgba(255, 205, 167, 0.84);
   border-radius: 999px;
   padding: 0.7rem 1.24rem;
@@ -226,6 +227,8 @@
   margin: 0;
   font-size: 0.86rem;
   color: rgba(245, 232, 221, 0.9);
+  text-align: center;
+  max-width: 58ch;
 }
 
 .connect-feedback--success {
@@ -261,11 +264,7 @@
   }
 
   .connect-actions {
-    align-items: stretch;
-  }
-
-  .connect-send {
-    width: min(280px, 100%);
+    justify-items: center;
   }
 }
 

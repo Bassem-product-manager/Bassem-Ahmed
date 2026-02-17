@@ -121,7 +121,7 @@ export default function PortfolioSection() {
                       loop
                       playsInline
                       poster={project.mobileFallback}
-                      preload="metadata"
+                      preload="none"
                       onError={() =>
                         setVideoErrors((prev) => ({
                           ...prev,
@@ -137,6 +137,8 @@ export default function PortfolioSection() {
                       src={isCenterVideo && useFallbackImage ? project.mobileFallback : project.asset}
                       alt={project.alt}
                       loading={isCenterVideo ? 'eager' : 'lazy'}
+                      decoding="async"
+                      fetchPriority={isCenterVideo ? 'auto' : 'low'}
                     />
                   )}
                 </div>

@@ -311,6 +311,8 @@ export default function Timeline() {
                             src={company.asset}
                             alt={cloneIndex === 0 ? company.name : ''}
                             loading="lazy"
+                            decoding="async"
+                            fetchPriority="low"
                           />
                         </span>
                       </li>
@@ -344,7 +346,7 @@ export default function Timeline() {
 
             <span ref={carRef} className="timeline-road-vehicle">
               <span className="timeline-road-jet-trail" />
-              <img className="timeline-road-jet" src={planeImage} alt="" loading="lazy" />
+              <img className="timeline-road-jet" src={planeImage} alt="" loading="lazy" decoding="async" fetchPriority="low" />
             </span>
           </div>
 

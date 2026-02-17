@@ -326,7 +326,7 @@ export default function GlassDeck() {
                   <h3>{card.title}</h3>
 
                   <div className="fanCard__media" aria-hidden="true">
-                    <img src={card.image} alt="" loading="lazy" />
+                    <img src={card.image} alt="" loading="lazy" decoding="async" fetchPriority="low" />
                   </div>
 
                   <p className="fanCard__desc">{card.desc}</p>

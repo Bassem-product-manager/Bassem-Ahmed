@@ -7,11 +7,11 @@ import './GitHubPortfolioSection.css';
 const projectCards = [
   {
     id: 'startup',
-    title: 'Ecommerce',
-    tag: 'ECOMMERCE',
+    title: 'Full CRUD Operation',
+    tag: 'CRUD',
     image: startupImage,
-    href: 'https://ecommerce-react-app34.netlify.app/',
-    alt: 'Startup e-commerce project preview'
+    href: 'https://crud-system-pure-js.netlify.app/',
+    alt: 'CRUD operation project preview'
   },
   {
     id: 'travel',
@@ -23,11 +23,11 @@ const projectCards = [
   },
   {
     id: 'bassem',
-    title: 'Full CRUD Operation',
-    tag: 'CRUD',
+    title: 'Full ecommerce',
+    tag: 'ECOMMERCE',
     image: bassemImage,
-    href: 'https://crud-system-pure-js.netlify.app/',
-    alt: 'Bassem CRUD system project preview'
+    href: 'https://ecommerce-react-app34.netlify.app/',
+    alt: 'Full ecommerce project preview'
   },
   {
     id: 'blood',

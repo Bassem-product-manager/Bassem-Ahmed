@@ -189,8 +189,8 @@
 }
 
 .hero-socials a {
-  width: 2.45rem;
-  height: 2.45rem;
+  width: 2.62rem;
+  height: 2.62rem;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
@@ -198,7 +198,7 @@
   border: 1px solid rgba(255, 220, 192, 0.32);
   color: #f2dcc8;
   text-decoration: none;
-  font-size: 0.98rem;
+  font-size: 1.06rem;
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(8px);
   transition: transform 170ms ease, box-shadow 210ms ease, border-color 210ms ease, color 210ms ease;
@@ -448,8 +448,9 @@
   }
 
   .hero-socials a {
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2.34rem;
+    height: 2.34rem;
+    font-size: 1rem;
   }
 
   .hero-stage-wrap {

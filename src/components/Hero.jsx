@@ -11,23 +11,27 @@ const enterEase = [0.22, 1, 0.36, 1];
 const socialLinks = [
   {
     label: 'Behance',
-    href: 'https://www.behance.net/username',
-    icon: FaBehance
+    href: 'https://www.behance.net/bassemahmed19',
+    icon: FaBehance,
+    newTab: true
   },
   {
     label: 'GitHub',
-    href: 'https://github.com/username',
-    icon: FaGithub
+    href: 'https://github.com/Bassem-product-manager',
+    icon: FaGithub,
+    newTab: true
   },
   {
     label: 'WhatsApp',
-    href: 'https://wa.me/201063344708',
-    icon: FaWhatsapp
+    href: 'https://api.whatsapp.com/send?phone=020163344708',
+    icon: FaWhatsapp,
+    newTab: true
   },
   {
-    label: 'Gmail',
-    href: 'mailto:placeholder@example.com',
-    icon: FaEnvelope
+    label: 'Email',
+    href: 'mailto:bassem.ahmed0202@gmail.com',
+    icon: FaEnvelope,
+    newTab: false
   }
 ];
 
@@ -123,9 +127,14 @@ export default function Hero() {
           </div>
 
           <ul className="hero-socials" aria-label="Social links">
-            {socialLinks.map(({ label, href, icon: Icon }) => (
+            {socialLinks.map(({ label, href, icon: Icon, newTab }) => (
               <li key={label}>
-                <a href={href} target="_blank" rel="noreferrer" aria-label={label}>
+                <a
+                  href={href}
+                  target={newTab ? '_blank' : undefined}
+                  rel={newTab ? 'noreferrer' : undefined}
+                  aria-label={label}
+                >
                   <Icon />
                 </a>
               </li>

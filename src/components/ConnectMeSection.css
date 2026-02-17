@@ -1,0 +1,285 @@
+.connect-section {
+  --connect-card-bg: rgba(19, 14, 11, 0.56);
+  --connect-border: rgba(255, 226, 204, 0.24);
+  --connect-text: #fdf6ef;
+  --connect-muted: rgba(239, 226, 215, 0.9);
+  --connect-accent: #ffb67c;
+  --connect-accent-soft: rgba(255, 183, 131, 0.28);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(3.8rem, 8vw, 6.4rem) clamp(1rem, 3vw, 2.6rem) clamp(4.2rem, 8vw, 6.8rem);
+  background:
+    linear-gradient(160deg, rgba(8, 6, 7, 0.42) 0%, rgba(12, 9, 7, 0.36) 56%, rgba(10, 7, 8, 0.54) 100%),
+    var(--connect-bg-image) center 40% / cover no-repeat;
+}
+
+.connect-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(74% 54% at 50% 112%, rgba(162, 93, 50, 0.22) 0%, rgba(162, 93, 50, 0) 72%),
+    radial-gradient(52% 46% at 12% 0%, rgba(201, 144, 102, 0.12) 0%, rgba(201, 144, 102, 0) 72%);
+  opacity: 0.62;
+}
+
+.connect-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.26) 0.45px, transparent 0.45px),
+    radial-gradient(rgba(255, 174, 118, 0.2) 0.55px, transparent 0.55px);
+  background-size: 3px 3px, 4px 4px;
+  background-position: 0 0, 1px 2px;
+}
+
+.connect-section__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(7, 6, 9, 0.18) 0%, rgba(7, 6, 9, 0.34) 100%);
+}
+
+.connect-shell {
+  position: relative;
+  z-index: 1;
+  width: min(1080px, 100%);
+  margin-inline: auto;
+  display: grid;
+  gap: clamp(1.4rem, 2.8vw, 2.4rem);
+}
+
+.connect-header {
+  width: min(760px, 100%);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.connect-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.76rem;
+  color: rgba(252, 216, 191, 0.92);
+}
+
+.connect-header h2 {
+  margin: 0.68rem 0 0.52rem;
+  font-family: var(--heading-font);
+  font-size: clamp(1.92rem, 4.8vw, 3.46rem);
+  letter-spacing: -0.02em;
+  color: var(--connect-text);
+  line-height: 1.03;
+}
+
+.connect-subtitle {
+  margin: 0;
+  color: var(--connect-muted);
+  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+  line-height: 1.66;
+}
+
+.connect-form {
+  width: min(860px, 100%);
+  margin-inline: auto;
+  border-radius: 1.2rem;
+  border: 1px solid var(--connect-border);
+  padding: clamp(1rem, 2.2vw, 1.5rem);
+  background:
+    linear-gradient(165deg, rgba(255, 243, 231, 0.12) 0%, rgba(255, 243, 231, 0.03) 42%, rgba(255, 243, 231, 0) 100%),
+    var(--connect-card-bg);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  box-shadow:
+    0 24px 44px rgba(6, 5, 5, 0.44),
+    inset 0 1px 0 rgba(255, 243, 231, 0.08);
+}
+
+.connect-field {
+  display: grid;
+  gap: 0.46rem;
+}
+
+.connect-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 233, 213, 0.93);
+  letter-spacing: 0.01em;
+}
+
+.connect-field input,
+.connect-field textarea {
+  width: 100%;
+  border-radius: 0.76rem;
+  border: 1px solid rgba(255, 218, 188, 0.28);
+  background: rgba(11, 8, 7, 0.46);
+  color: #fff7ee;
+  font-family: var(--body-font);
+  font-size: 0.95rem;
+  padding: 0.78rem 0.9rem;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.connect-field textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.connect-field input::placeholder,
+.connect-field textarea::placeholder {
+  color: rgba(248, 229, 212, 0.56);
+}
+
+.connect-field input:hover,
+.connect-field textarea:hover {
+  border-color: rgba(255, 212, 178, 0.45);
+}
+
+.connect-field input:focus-visible,
+.connect-field textarea:focus-visible,
+.connect-send:focus-visible {
+  outline: 2px solid rgba(255, 191, 137, 0.95);
+  outline-offset: 2px;
+}
+
+.connect-field input:focus-visible,
+.connect-field textarea:focus-visible {
+  border-color: rgba(255, 191, 137, 0.84);
+  box-shadow: 0 0 0 3px rgba(255, 183, 131, 0.18);
+  background: rgba(11, 8, 7, 0.62);
+}
+
+.connect-field input[aria-invalid='true'],
+.connect-field textarea[aria-invalid='true'] {
+  border-color: rgba(255, 129, 113, 0.76);
+}
+
+.connect-form__row {
+  margin-top: 0.88rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.82rem;
+}
+
+.connect-form > .connect-field + .connect-form__row,
+.connect-form__row + .connect-field {
+  margin-top: 0.88rem;
+}
+
+.connect-error {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #ffb9aa;
+}
+
+.connect-honeypot {
+  position: absolute;
+  left: -100vw;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.connect-actions {
+  margin-top: 0.96rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.72rem;
+}
+
+.connect-send {
+  min-width: 132px;
+  border: 1px solid rgba(255, 205, 167, 0.84);
+  border-radius: 999px;
+  padding: 0.7rem 1.24rem;
+  color: #291408;
+  font-family: var(--heading-font);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  background: linear-gradient(120deg, #ffd8b7 0%, #ff9b5c 100%);
+  box-shadow: 0 12px 28px rgba(255, 147, 74, 0.34);
+  transition: transform 170ms ease, box-shadow 210ms ease, border-color 180ms ease, opacity 170ms ease;
+}
+
+.connect-send:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px rgba(255, 147, 74, 0.42);
+}
+
+.connect-send:disabled {
+  cursor: wait;
+  opacity: 0.8;
+  transform: none;
+}
+
+.connect-feedback {
+  margin: 0;
+  font-size: 0.86rem;
+  color: rgba(245, 232, 221, 0.9);
+}
+
+.connect-feedback--success {
+  color: #b6ffd6;
+}
+
+.connect-feedback--error {
+  color: #ffd0c2;
+}
+
+@media (max-width: 768px) {
+  .connect-section {
+    background:
+      linear-gradient(160deg, rgba(8, 6, 7, 0.46) 0%, rgba(12, 9, 7, 0.42) 56%, rgba(10, 7, 8, 0.58) 100%),
+      var(--connect-bg-image) center 46% / cover no-repeat;
+  }
+
+  .connect-header {
+    text-align: left;
+  }
+
+  .connect-form {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow:
+      0 16px 30px rgba(6, 5, 5, 0.42),
+      inset 0 1px 0 rgba(255, 243, 231, 0.08);
+  }
+
+  .connect-form__row {
+    grid-template-columns: 1fr;
+    gap: 0.72rem;
+  }
+
+  .connect-actions {
+    align-items: stretch;
+  }
+
+  .connect-send {
+    width: min(280px, 100%);
+  }
+}
+
+@media (max-width: 500px) {
+  .connect-section {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .connect-field input,
+  .connect-field textarea,
+  .connect-send {
+    transition: none !important;
+  }
+}

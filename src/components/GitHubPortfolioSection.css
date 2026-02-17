@@ -64,7 +64,7 @@
   position: relative;
   margin-top: clamp(1.8rem, 3.2vw, 2.7rem);
   border-radius: 1.4rem;
-  min-height: clamp(440px, 56vw, 650px);
+  min-height: clamp(420px, 54vw, 620px);
   padding: clamp(0.8rem, 1.5vw, 1.2rem);
   border: 1px solid rgba(255, 226, 204, 0.14);
   background:
@@ -159,21 +159,62 @@
   animation-delay: 1.8s;
 }
 
-.github-portfolio-stack {
+.github-portfolio-folder {
   position: relative;
-  height: clamp(430px, 52vw, 610px);
-  margin-top: clamp(1.8rem, 4vw, 2.6rem);
-  perspective: 1200px;
+  width: min(760px, 100%);
+  margin: clamp(2.1rem, 4.4vw, 3.2rem) auto 0;
+  z-index: 20;
 }
 
-.github-portfolio-card {
-  --x: 0px;
-  --y: 0px;
-  --r: 0deg;
+.github-portfolio-folder__tab {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: clamp(136px, 26vw, 214px);
+  height: clamp(34px, 5vw, 52px);
+  border-radius: 0.95rem 0.95rem 0 0;
+  border: 1px solid rgba(255, 222, 196, 0.3);
+  border-bottom: none;
+  background:
+    linear-gradient(145deg, rgba(255, 224, 198, 0.34), rgba(255, 224, 198, 0.1) 64%),
+    rgba(116, 67, 37, 0.46);
+}
+
+.github-portfolio-folder__body {
+  position: relative;
+  z-index: 2;
+  margin-top: -1px;
+  min-height: 0;
+  padding: clamp(1rem, 2vw, 1.26rem);
+  border-radius: 0 1.12rem 1.12rem 1.12rem;
+  border: 1px solid rgba(255, 222, 196, 0.32);
+  background:
+    linear-gradient(160deg, rgba(255, 238, 223, 0.24) 0%, rgba(255, 238, 223, 0.08) 55%, rgba(255, 238, 223, 0.02) 100%),
+    rgba(90, 52, 29, 0.54);
+  box-shadow:
+    0 20px 34px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.github-portfolio-folder__stack {
+  --stack-spread: 1;
+  position: relative;
+  z-index: 2;
+  width: min(620px, 100%);
+  height: clamp(240px, 32vw, 304px);
+  margin: 0 auto 0.9rem;
+}
+
+.github-portfolio-file-card {
+  --stack-x: 0px;
+  --stack-y: 0px;
+  --stack-r: 0deg;
+  --stack-z: 1;
   position: absolute;
   left: 50%;
-  top: 50%;
-  width: clamp(162px, 19vw, 224px);
+  bottom: 0;
+  width: clamp(162px, 20vw, 224px);
   padding: 0.52rem;
   border-radius: 1rem;
   text-decoration: none;
@@ -183,58 +224,34 @@
   background:
     linear-gradient(170deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.02) 56%),
     rgba(18, 13, 10, 0.75);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
   box-shadow:
-    0 20px 34px rgba(7, 6, 6, 0.38),
+    0 18px 30px rgba(7, 6, 6, 0.34),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transform: translate3d(calc(-50% + var(--x)), calc(-50% + var(--y)), 0) rotate(var(--r));
-  transition: transform 230ms ease, border-color 230ms ease, box-shadow 230ms ease;
-  animation: gh-card-enter 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: calc(var(--card-order) * 90ms);
+  transform: translate3d(calc(-50% + (var(--stack-x) * var(--stack-spread))), var(--stack-y), 0) rotate(var(--stack-r));
+  z-index: var(--stack-z);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+  animation: gh-stack-enter 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--card-order) * 85ms);
 }
 
-.github-portfolio-card:hover {
-  transform: translate3d(calc(-50% + var(--x)), calc(-50% + var(--y) - 8px), 0) rotate(var(--r)) scale(1.024);
+.github-portfolio-file-card:hover {
+  transform: translate3d(
+      calc(-50% + (var(--stack-x) * var(--stack-spread))),
+      calc(var(--stack-y) - 10px),
+      0
+    )
+    rotate(var(--stack-r))
+    scale(1.03);
   border-color: rgba(255, 210, 172, 0.62);
-  box-shadow: 0 24px 38px rgba(6, 5, 5, 0.46), 0 0 22px rgba(255, 163, 95, 0.18);
+  box-shadow: 0 24px 36px rgba(6, 5, 5, 0.44), 0 0 22px rgba(255, 163, 95, 0.18);
 }
 
-.github-portfolio-card:focus-visible {
+.github-portfolio-file-card:focus-visible {
   outline: 2px solid rgba(255, 190, 133, 0.95);
   outline-offset: 3px;
 }
 
-.github-portfolio-card--center {
-  --x: 0px;
-  --y: 24px;
-  --r: 0deg;
-  z-index: 14;
-  width: clamp(198px, 24vw, 286px);
-}
-
-.github-portfolio-card--left-top {
-  --x: -226px;
-  --y: -58px;
-  --r: -14deg;
-  z-index: 12;
-}
-
-.github-portfolio-card--right-top {
-  --x: 226px;
-  --y: -58px;
-  --r: 14deg;
-  z-index: 12;
-}
-
-.github-portfolio-card--left-bottom {
-  --x: -196px;
-  --y: 84px;
-  --r: -8deg;
-  z-index: 13;
-}
-
-.github-portfolio-card__tag {
+.github-portfolio-file-card__tag {
   display: inline-flex;
   margin: 0 0 0.44rem;
   padding: 0.2rem 0.5rem;
@@ -248,7 +265,7 @@
   color: rgba(255, 220, 194, 0.92);
 }
 
-.github-portfolio-card__media {
+.github-portfolio-file-card__media {
   margin-inline: 0;
   border-radius: 0.78rem;
   overflow: hidden;
@@ -257,7 +274,7 @@
   aspect-ratio: 16 / 10;
 }
 
-.github-portfolio-card__media img {
+.github-portfolio-file-card__media img {
   width: 100%;
   height: 100%;
   display: block;
@@ -267,12 +284,12 @@
   transition: filter 220ms ease, transform 220ms ease;
 }
 
-.github-portfolio-card:hover .github-portfolio-card__media img {
+.github-portfolio-file-card:hover .github-portfolio-file-card__media img {
   filter: brightness(1.2) saturate(1.14) contrast(1.1);
   transform: scale(1.03);
 }
 
-.github-portfolio-card__title {
+.github-portfolio-file-card__title {
   display: block;
   margin: 0.5rem 0 0;
   font-family: var(--heading-font);
@@ -281,118 +298,6 @@
   font-weight: 700;
   letter-spacing: 0.01em;
   color: #fff8ef;
-}
-
-.github-portfolio-folder {
-  display: block;
-  position: absolute;
-  left: 50%;
-  bottom: -18%;
-  width: clamp(310px, 64vw, 680px);
-  transform: translateX(-50%);
-  text-decoration: none;
-  pointer-events: auto;
-  z-index: 20;
-  cursor: pointer;
-  transition: transform 220ms ease;
-}
-
-.github-portfolio-folder:hover {
-  transform: translateX(-50%) translateY(-4px);
-}
-
-.github-portfolio-folder:focus-visible {
-  outline: 2px solid rgba(255, 190, 133, 0.95);
-  outline-offset: 3px;
-}
-
-.github-portfolio-folder__back {
-  position: absolute;
-  left: 50%;
-  width: 100%;
-  border-radius: 0 1.2rem 1.2rem 1.2rem;
-  border: 1px solid rgba(255, 220, 194, 0.22);
-  background:
-    linear-gradient(160deg, rgba(255, 231, 211, 0.24) 0%, rgba(255, 231, 211, 0.05) 62%),
-    rgba(66, 38, 21, 0.72);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.32);
-  z-index: 2;
-  pointer-events: none;
-}
-
-.github-portfolio-folder__back::before {
-  content: '';
-  position: absolute;
-  top: -18px;
-  left: 2%;
-  width: clamp(118px, 20vw, 188px);
-  height: clamp(28px, 4.2vw, 40px);
-  border-radius: 0.92rem 0.92rem 0 0;
-  border: 1px solid rgba(255, 220, 194, 0.2);
-  border-bottom: none;
-  background:
-    linear-gradient(145deg, rgba(255, 224, 198, 0.24), rgba(255, 224, 198, 0.06) 64%),
-    rgba(83, 47, 25, 0.68);
-}
-
-.github-portfolio-folder__back--rear {
-  top: 18px;
-  min-height: clamp(118px, 16vw, 154px);
-  transform: translateX(calc(-50% + 26px));
-  opacity: 0.64;
-  z-index: 1;
-}
-
-.github-portfolio-folder__back--mid {
-  top: 10px;
-  min-height: clamp(124px, 17vw, 162px);
-  transform: translateX(calc(-50% + 14px));
-  opacity: 0.9;
-}
-
-.github-portfolio-folder::before {
-  content: '';
-  position: absolute;
-  inset: auto 7% 8% 7%;
-  height: clamp(40px, 7vw, 66px);
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(255, 169, 102, 0.45) 0%, rgba(255, 169, 102, 0) 74%);
-  filter: blur(12px);
-}
-
-.github-portfolio-folder__tab {
-  position: relative;
-  z-index: 3;
-  display: block;
-  width: clamp(150px, 28vw, 256px);
-  height: clamp(38px, 5.8vw, 62px);
-  border-radius: 1.1rem 1.1rem 0 0;
-  border: 1px solid rgba(255, 222, 196, 0.26);
-  border-bottom: none;
-  background:
-    linear-gradient(145deg, rgba(255, 224, 198, 0.32), rgba(255, 224, 198, 0.08) 64%),
-    rgba(116, 67, 37, 0.44);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-.github-portfolio-folder__body {
-  position: relative;
-  z-index: 4;
-  margin-top: -1px;
-  min-height: clamp(122px, 16vw, 156px);
-  padding: 0;
-  border-radius: 0 1.32rem 1.32rem 1.32rem;
-  border: 1px solid rgba(255, 222, 196, 0.32);
-  background:
-    linear-gradient(160deg, rgba(255, 238, 223, 0.24) 0%, rgba(255, 238, 223, 0.06) 55%, rgba(255, 238, 223, 0.02) 100%),
-    rgba(90, 52, 29, 0.5);
-  box-shadow:
-    0 24px 44px rgba(0, 0, 0, 0.32),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  overflow: hidden;
 }
 
 .github-portfolio-folder__body::before {
@@ -411,25 +316,86 @@
 .github-portfolio-folder__body::after {
   content: '';
   position: absolute;
-  inset: auto 10% 10% 10%;
-  height: 42%;
+  inset: auto 12% 10% 12%;
+  height: 52%;
   border-radius: 999px;
   background: radial-gradient(circle, rgba(255, 172, 106, 0.32) 0%, rgba(255, 172, 106, 0) 72%);
   filter: blur(14px);
   opacity: 0.86;
 }
 
-@keyframes gh-card-enter {
+.github-portfolio-folder__title {
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  color: #fff7ee;
+  font-family: var(--heading-font);
+  font-size: clamp(1rem, 1.6vw, 1.26rem);
+}
+
+.github-portfolio-folder__desc {
+  margin: 0.36rem 0 0;
+  position: relative;
+  z-index: 2;
+  color: rgba(248, 230, 214, 0.9);
+  font-size: 0.9rem;
+  line-height: 1.46;
+}
+
+.github-portfolio-folder__actions {
+  margin-top: 0.78rem;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.54rem;
+}
+
+.github-portfolio-folder__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 220, 194, 0.36);
+  padding: 0.5rem 0.84rem;
+  color: #fff6ec;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background: rgba(30, 20, 14, 0.4);
+  transition: border-color 180ms ease, transform 180ms ease, background-color 180ms ease;
+}
+
+.github-portfolio-folder__btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 210, 172, 0.7);
+  background: rgba(38, 25, 17, 0.56);
+}
+
+.github-portfolio-folder__btn:focus-visible {
+  outline: 2px solid rgba(255, 190, 133, 0.95);
+  outline-offset: 2px;
+}
+
+.github-portfolio-folder__btn--accent {
+  color: #2a1306;
+  border-color: rgba(255, 199, 152, 0.9);
+  background: linear-gradient(120deg, #ffd9b8 0%, #ff9f61 100%);
+}
+
+@keyframes gh-stack-enter {
   from {
     opacity: 0;
     filter: blur(8px);
-    transform: translate3d(calc(-50% + var(--x)), calc(-50% + var(--y) + 24px), 0) rotate(calc(var(--r) * 0.72))
-      scale(0.96);
+    transform: translate3d(calc(-50% + (var(--stack-x) * var(--stack-spread))), calc(var(--stack-y) + 26px), 0)
+      rotate(calc(var(--stack-r) * 0.72)) scale(0.96);
   }
   to {
     opacity: 1;
     filter: blur(0);
-    transform: translate3d(calc(-50% + var(--x)), calc(-50% + var(--y)), 0) rotate(var(--r)) scale(1);
+    transform: translate3d(calc(-50% + (var(--stack-x) * var(--stack-spread))), var(--stack-y), 0) rotate(var(--stack-r))
+      scale(1);
   }
 }
 
@@ -444,24 +410,8 @@
 }
 
 @media (max-width: 1100px) {
-  .github-portfolio-card--left-top {
-    --x: -176px;
-    --y: -40px;
-  }
-
-  .github-portfolio-card--right-top {
-    --x: 176px;
-    --y: -40px;
-  }
-
-  .github-portfolio-card--left-bottom {
-    --x: -144px;
-    --y: 92px;
-  }
-
   .github-portfolio-folder {
-    width: clamp(310px, 70vw, 640px);
-    bottom: -16%;
+    width: min(700px, 100%);
   }
 }
 
@@ -491,59 +441,35 @@
     min-width: 0;
   }
 
-  .github-portfolio-stack {
-    height: auto;
-    margin-top: 0;
-    display: grid;
-    gap: 0.78rem;
+  .github-portfolio-folder {
+    width: min(600px, 100%);
+    margin: 0.8rem auto 0;
   }
 
-  .github-portfolio-card {
-    position: relative;
-    left: auto;
-    top: auto;
-    width: min(440px, 100%);
-    margin-inline: auto;
-    transform: none !important;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+  .github-portfolio-folder__stack {
+    --stack-spread: 0.58;
+    height: 220px;
+    margin-bottom: 0.76rem;
+  }
+
+  .github-portfolio-file-card {
+    width: clamp(142px, 35vw, 188px);
+    padding: 0.42rem;
     box-shadow: 0 14px 24px rgba(6, 5, 5, 0.38);
   }
 
-  .github-portfolio-card__title {
-    font-size: 0.92rem;
+  .github-portfolio-file-card:hover {
+    transform: translate3d(
+        calc(-50% + (var(--stack-x) * var(--stack-spread))),
+        calc(var(--stack-y) - 6px),
+        0
+      )
+      rotate(var(--stack-r))
+      scale(1.015);
   }
 
-  .github-portfolio-card:hover {
-    transform: translateY(-4px) scale(1.01) !important;
-  }
-
-  .github-portfolio-folder {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    width: min(560px, 100%);
-    margin: 0.8rem auto 0;
-    transform: none;
-    bottom: auto;
-  }
-
-  .github-portfolio-folder:hover {
-    transform: translateY(-3px);
-  }
-
-  .github-portfolio-folder__back--rear {
-    transform: translateX(calc(-50% + 14px));
-  }
-
-  .github-portfolio-folder__back--mid {
-    transform: translateX(calc(-50% + 8px));
-  }
-
-  .github-portfolio-folder__tab,
-  .github-portfolio-folder__body {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+  .github-portfolio-file-card__title {
+    font-size: 0.9rem;
   }
 }
 
@@ -553,32 +479,42 @@
     padding-right: 0.9rem;
   }
 
-  .github-portfolio-card {
-    padding: 0.46rem;
-  }
-
   .github-portfolio-pill {
     padding: 0.34rem 0.64rem;
     font-size: 0.58rem;
   }
 
-  .github-portfolio-card__tag {
+  .github-portfolio-folder__stack {
+    --stack-spread: 0.46;
+    height: 196px;
+  }
+
+  .github-portfolio-file-card {
+    width: clamp(126px, 39vw, 162px);
+    padding: 0.4rem;
+  }
+
+  .github-portfolio-file-card__tag {
     margin: 0 0 0.36rem;
     font-size: 0.61rem;
   }
 
-  .github-portfolio-card__title {
+  .github-portfolio-file-card__title {
     margin: 0.42rem 0 0;
     font-size: 0.84rem;
   }
 
   .github-portfolio-folder__body {
-    min-height: clamp(132px, 32vw, 170px);
+    padding: 0.84rem;
+  }
+
+  .github-portfolio-folder__btn {
+    width: 100%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .github-portfolio-card,
+  .github-portfolio-file-card,
   .github-portfolio-pill {
     animation: none !important;
     transition: none !important;

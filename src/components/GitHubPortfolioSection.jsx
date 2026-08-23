@@ -98,7 +98,7 @@ export default function GitHubPortfolioSection() {
                           alt={card.alt}
                           loading={index === 0 ? 'eager' : 'lazy'}
                           decoding="async"
-                          fetchPriority={index === 0 ? 'high' : 'low'}
+                          fetchpriority={index === 0 ? 'high' : 'low'}
                         />
                       </div>
                       <span className="github-portfolio-file-card__title">{card.title}</span>

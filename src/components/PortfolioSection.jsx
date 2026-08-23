@@ -138,7 +138,7 @@ export default function PortfolioSection() {
                       alt={project.alt}
                       loading={isCenterVideo ? 'eager' : 'lazy'}
                       decoding="async"
-                      fetchPriority={isCenterVideo ? 'auto' : 'low'}
+                      fetchpriority={isCenterVideo ? 'auto' : 'low'}
                     />
                   )}
                 </div>

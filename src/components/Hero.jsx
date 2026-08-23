@@ -129,10 +129,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.82, ease: enterEase }}
         >
-          <p className="hero-kicker">Technical Product Manager</p>
-          <h1>I'm Bassem Ahmed, Technical Product Manager with 4 Years of Experience</h1>
+          <p className="hero-kicker">Senior Product Owner | Product Manager</p>
+          <h1>I'm Bassem Ahmed, a Product Owner &amp; Product Manager with 3+ Years of Experience</h1>
           <p className="hero-subtitle">
-            I build digital products that do not just launch, they grow and are AI-powered.
+            I deliver digital products across healthcare, e-learning, e-commerce, ERP, and dashboards.
           </p>
 
           <div className="hero-actions">
@@ -178,9 +178,9 @@ export default function Hero() {
                 activePortrait === portraitCutout ? ' hero-stage-image--subject' : ''
               }`}
               src={activePortrait}
-              alt="Portrait of AI Product Owner"
+              alt="Portrait of Bassem Ahmed, Senior Product Owner and Product Manager"
               loading="eager"
-              fetchPriority="high"
+              fetchpriority="high"
               decoding="async"
               onError={() => {
                 if (activePortrait !== portraitFallback) {

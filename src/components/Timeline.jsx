@@ -10,9 +10,7 @@ import {
   FaRoad
 } from 'react-icons/fa';
 import planeImage from '../assets/seedream-4.5_Top-down_view_of_a_sleek_premium_futuristic_jet_airplane_matte_black_body_subtle-0-Photoroom.png';
-import bankDeCairoLogo from '../assets/bank-de-cairo.jpg';
 import innoTechLogo from '../assets/innotechegy_logo.jpg';
-import makeYourMiracleLogo from '../assets/mym_make_your_miracle_logo.jpg';
 import qeemaTechLogo from '../assets/qeema_tech_logo.jpg';
 import sofcoLogo from '../assets/sofco.jpg';
 import './Timeline.css';
@@ -31,73 +29,51 @@ const timelineItems = [
     title: 'Senior Product Owner — InnoTech',
     date: 'May 2025 – Present',
     bullets: [
-      'Leading cross-functional collaboration (medical, business, engineering) to align vision and improve healthcare service quality.',
-      'Building roadmaps and backlogs for healthcare systems (Dialysis & Blood Purification) and managing a remote team end-to-end.'
+      'Own delivery for Gulf/KSA digital healthcare and education products, from discovery and planning through release and UAT.',
+      'Manage product roadmaps and Jira backlogs; prioritize initiatives, write user stories, and lead cross-functional delivery.',
+      'Gather and analyze stakeholder requirements, translating them into SRS, workflows, user stories, and acceptance criteria.',
+      'Validate solutions with stakeholders, developers, and QA while maintaining readiness and traceability in Jira.',
+      'Support UAT and verify delivered features against acceptance criteria; prototype product flows when needed.'
     ]
   },
   {
     category: 'teaching',
-    title: 'UI/UX Instructor (Part-Time) — Amit Learning',
-    date: 'Jan 2025 – Present',
+    title: 'UI/UX Instructor (Part-Time) — AMIT Learning',
+    date: 'June 2025 – Present',
     bullets: [
-      'Teaching UI/UX and designing a practical learning curriculum.',
-      'Reviewing assignments and mentoring learners through hands-on projects.'
+      'Deliver UI/UX training and review practical assignments focused on user-centered design and prototyping.'
     ]
   },
   {
     category: 'work',
-    title: 'Product Owner — Qeema Tech',
+    title: 'Business Analyst — Qeema Tech',
     date: 'Apr 2024 – May 2025',
     bullets: [
-      'Aligning stakeholders and technical teams around product vision and measurable outcomes.',
-      'Continuously refining the backlog and writing user stories based on market research and user needs.'
+      'Gathered and analyzed requirements; produced workflows, user stories, and acceptance criteria for delivery teams.',
+      'Aligned stakeholders and technical teams through requirement validation, backlog refinement, and solution clarification.',
+      'Mapped As-Is and To-Be processes and performed gap analysis to identify workflow improvements and dependencies.',
+      'Supported backlog refinement, UAT, and change-impact analysis to keep delivered features aligned with approved requirements.'
     ]
   },
   {
     category: 'work',
-    title: 'Product Owner — Make your miracle (Darby Platform)',
-    date: 'Feb 2024 – May 2024',
+    title: 'Product Designer — SOFCO',
+    date: 'Jan 2024 – Dec 2024',
     bullets: [
-      'Leading product discovery: defining goals, identifying pain points, and improving B2B/B2C experiences.',
-      'Prioritization and roadmapping across stakeholders, design, and development to improve shipping and logistics experience.'
+      'Conducted user research and task analysis to identify operational and admin workflow pain points.',
+      'Created user flows, wireframes, and interactive prototypes; validated product concepts before development.'
     ]
-  },
-  {
-    category: 'work',
-    title: 'Product Owner — Bank De Cairo',
-    date: 'Oct 2023 – Dec 2023',
-    bullets: [
-      'Enhancing mobile banking features and prioritizing high-impact improvements.',
-      'Achieved +22% retention through iterative backlog refinement and continuous UX/product iterations.',
-      'Coordinating Agile sprints with UX, dev, and QA.'
-    ]
-  },
-  {
-    category: 'work',
-    title: 'UI/UX — SOFCO',
-    date: 'Feb 2023 – Sep 2023',
-    bullets: [
-      'Conducting user research and task analysis to identify operational and management pain points.',
-      'Creating wireframes and low-fidelity prototypes to validate UX solutions with stakeholders.'
-    ]
-  },
-  {
-    category: 'teaching',
-    title: 'Instructor (Volunteer) — Three Dimensions of Success / Software Council',
-    date: 'Apr 2022 – Sep 2022',
-    bullets: ['Volunteering as an instructor and sharing knowledge in software and digital skills.']
-  },
-  {
-    category: 'volunteer',
-    title: 'Volunteer — Resala',
-    date: 'May 2021 – Sep 2021',
-    bullets: ['Managing digital platforms to improve communication, system updates, and user support guidance.']
   },
   {
     category: 'education',
     title: 'Education — Helwan University (Business Information Systems)',
     date: 'Grade: Excellent',
     bullets: ['Business Information Systems, Helwan University.']
+  },
+  {
+    category: 'education',
+    title: 'Master of Project Management (PMP) — German University in Cairo (GUC)',
+    bullets: ['Project management studies at the German University in Cairo.']
   }
 ];
 
@@ -111,16 +87,6 @@ const workedWithCompanies = [
     id: 'qeema-tech',
     name: 'Qeema Tech',
     asset: qeemaTechLogo
-  },
-  {
-    id: 'make-your-miracle',
-    name: 'Make Your Miracle',
-    asset: makeYourMiracleLogo
-  },
-  {
-    id: 'bank-de-cairo',
-    name: 'Bank De Cairo',
-    asset: bankDeCairoLogo
   },
   {
     id: 'sofco',
@@ -312,7 +278,7 @@ export default function Timeline() {
                             alt={cloneIndex === 0 ? company.name : ''}
                             loading="lazy"
                             decoding="async"
-                            fetchPriority="low"
+                            fetchpriority="low"
                           />
                         </span>
                       </li>
@@ -324,8 +290,8 @@ export default function Timeline() {
           </div>
           <h2>My Journey</h2>
           <p className="timeline-subtitle">
-            A timeline of building AI products across healthcare, education, and remote
-            consultation{'—'}impacting real lives.
+            Product ownership, business analysis, product design, and education experience
+            aligned with my latest CV.
           </p>
         </motion.header>
 
@@ -346,7 +312,7 @@ export default function Timeline() {
 
             <span ref={carRef} className="timeline-road-vehicle">
               <span className="timeline-road-jet-trail" />
-              <img className="timeline-road-jet" src={planeImage} alt="" loading="lazy" decoding="async" fetchPriority="low" />
+              <img className="timeline-road-jet" src={planeImage} alt="" loading="lazy" decoding="async" fetchpriority="low" />
             </span>
           </div>
 
@@ -393,7 +359,7 @@ export default function Timeline() {
                       </span>
                       <div>
                         <h3>{item.title}</h3>
-                        <p className="timeline-date">{item.date}</p>
+                        {item.date ? <p className="timeline-date">{item.date}</p> : null}
                       </div>
                     </div>
 
